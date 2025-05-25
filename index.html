@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="media/AT_Productions_Transparant.png" type="image/png" sizes="128x128">
+    <link rel="apple-touch-icon" href="media/AT_Productions_Transparant.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aroarah Thunder - Pageant Royalty</title>
@@ -45,6 +47,18 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-image {   
+            width: 50px;
+            height: 50px;
+            background: url('media/AT_Productions_Transparant.ico') center/contain no-repeat;
+        }
+        
+        .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             font-weight: 700;
@@ -76,7 +90,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #d4af37, #ffd700);
+            background: linear-gradient(90deg, #8B1538, #B91C47);
             transition: width 0.3s ease;
         }
         
@@ -87,7 +101,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #2C0A14 0%, #8B1538 50%, #2C0A14 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -106,10 +120,48 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="elegantPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23elegantPattern)"/></svg>');
         }
         
+        /* Image carousel background */
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        
+        .hero-slide.active {
+            opacity: 0.3;
+        }
+        
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 10, 20, 0.8) 0%, rgba(139, 21, 56, 0.6) 50%, rgba(44, 10, 20, 0.8) 100%);
+        }
+        
         .hero-content {
-            z-index: 2;
+            z-index: 3;
             color: white;
             max-width: 800px;
+            position: relative;
         }
         
         .hero h1 {
@@ -118,13 +170,13 @@
             margin-bottom: 1rem;
             font-weight: 400;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.7);
         }
         
         .hero-subtitle {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             font-weight: 300;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -135,14 +187,14 @@
             font-size: 1.5rem;
             margin-bottom: 3rem;
             font-style: italic;
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
         .cta-button {
             display: inline-block;
             padding: 18px 40px;
-            background: linear-gradient(135deg, #d4af37, #ffd700);
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #8B1538, #B91C47);
+            color: white;
             text-decoration: none;
             border: none;
             font-weight: 600;
@@ -150,13 +202,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 25px rgba(139, 21, 56, 0.4);
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
-            background: linear-gradient(135deg, #ffd700, #d4af37);
+            box-shadow: 0 12px 35px rgba(139, 21, 56, 0.6);
+            background: linear-gradient(135deg, #B91C47, #8B1538);
         }
         
         /* Services Section */
@@ -183,7 +235,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(90deg, #d4af37, #ffd700);
+            background: linear-gradient(90deg, #8B1538, #B91C47);
         }
         
         .services-grid {
@@ -206,13 +258,13 @@
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-            border-top: 3px solid #d4af37;
+            border-top: 3px solid #8B1538;
         }
         
         .service-icon {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: #d4af37;
+            color: #8B1538;
         }
         
         .service-card h3 {
@@ -268,14 +320,14 @@
             text-align: center;
             padding: 1.5rem;
             background: #fafafa;
-            border-left: 3px solid #d4af37;
+            border-left: 3px solid #8B1538;
         }
         
         .achievement-number {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             font-weight: 600;
-            color: #d4af37;
+            color: #8B1538;
             display: block;
         }
         
@@ -289,19 +341,44 @@
         .about-image {
             position: relative;
             height: 500px;
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            background: linear-gradient(135deg, #2C0A14, #8B1538);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #d4af37;
+            color: #B91C47;
             font-size: 4rem;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .about-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .about-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        
+        .about-slide.active {
+            opacity: 0.8;
         }
         
         /* Pageants Section */
         .pageants {
             padding: 120px 0;
-            background: #1a1a1a;
+            background: #2C0A14;
             color: white;
         }
         
@@ -328,12 +405,13 @@
         .pageant-card:hover {
             background: rgba(255,255,255,0.08);
             transform: translateY(-5px);
+            border-color: #8B1538;
         }
         
         .pageant-year {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            color: #d4af37;
+            color: #B91C47;
             margin-bottom: 1rem;
         }
         
@@ -344,7 +422,7 @@
         }
         
         .pageant-result {
-            color: #d4af37;
+            color: #B91C47;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -369,7 +447,7 @@
         
         .quote-icon {
             font-size: 3rem;
-            color: #d4af37;
+            color: #8B1538;
             margin-bottom: 2rem;
         }
         
@@ -399,7 +477,7 @@
         /* Contact Section */
         .contact {
             padding: 120px 0;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            background: linear-gradient(135deg, #2C0A14 0%, #8B1538 100%);
             color: white;
             text-align: center;
         }
@@ -430,7 +508,7 @@
             background: transparent;
             color: white;
             text-decoration: none;
-            border: 2px solid #d4af37;
+            border: 2px solid #B91C47;
             font-weight: 500;
             transition: all 0.3s ease;
             text-transform: uppercase;
@@ -439,19 +517,19 @@
         }
         
         .contact-button:hover {
-            background: #d4af37;
-            color: #1a1a1a;
+            background: #B91C47;
+            color: white;
             transform: translateY(-2px);
         }
         
         .contact-button.primary {
-            background: linear-gradient(135deg, #d4af37, #ffd700);
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #8B1538, #B91C47);
+            color: white;
             border: none;
         }
         
         .contact-button.primary:hover {
-            background: linear-gradient(135deg, #ffd700, #d4af37);
+            background: linear-gradient(135deg, #B91C47, #8B1538);
         }
         
         /* Footer */
@@ -499,6 +577,19 @@
             .achievements {
                 grid-template-columns: 1fr;
             }
+            
+            .logo {
+                gap: 0.5rem;
+            }
+            
+            .logo-image {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
         }
         
         /* Scroll animations */
@@ -518,7 +609,10 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">Aroarah Thunder</div>
+            <div class="logo">
+                <div class="logo-image"></div>
+                <div class="logo-text">Aroarah Thunder</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
@@ -531,6 +625,16 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-carousel">
+            <div class="hero-slide" style="background-image: url('media/AT_Dance_Pride.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('media/AT_Drawn_Pride_Month.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('media/AT_Orange_Dress_01.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('media/AT_Pagaent_Lineup.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('media/AT_Poster_01.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('media/AT_Red.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('media/AT_Stage_Pride.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('media/AT_Storm_Art.jpg')"></div>
+        </div>
         <div class="hero-content">
             <h1>Aroarah Thunder</h1>
             <p class="hero-subtitle">Pageant Royalty • Performance Artist • Entertainment Professional</p>
@@ -596,6 +700,12 @@
                     </div>
                 </div>
                 <div class="about-image fade-in">
+                    <div class="about-carousel">
+                        <div class="about-slide" style="background-image: url('media/AT_Dance_Pride.jpg')"></div>
+                        <div class="about-slide" style="background-image: url('media/AT_Poster_01.jpg')"></div>
+                        <div class="about-slide" style="background-image: url('media/AT_Pagaent_Lineup.jpg')"></div>
+                        <div class="about-slide" style="background-image: url('media/AT_Drawn_Pride_Month.jpg')"></div>
+                    </div>
                     ⚡👑⚡
                 </div>
             </div>
@@ -675,49 +785,61 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        // Image rotation arrays
+        const heroImages = [
+            'media/',
+            'media/AT_Performance_1.jpg',
+            'media/AT_Pageant_Crown.jpg',
+            'media/AT_Gala_Event.jpg',
+            'media/AT_Stage_Performance.jpg'
+        ];
+        
+        const aboutImages = [
+            'media/AT_Orange_Dress_03.jpg',
+            'media/AT_Poster_01.jpg',
+            'media/AT_Orange_Dress_03.jpg',
+            'media/AT_Drawn_Pride_Month.jpg'
+        ];
 
-        // Navigation background on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.boxShadow = 'none';
-            }
-        });
+        // Image carousel functionality
+        function initializeCarousel(containerSelector, images, interval = 4000) {
+            const container = document.querySelector(containerSelector);
+            if (!container) return;
+            
+            const slides = container.querySelectorAll('.hero-slide, .about-slide');
+            let currentIndex = 0;
+            
+            // Set first slide as active
+            if (slides.length === 0) return;
+            slides[currentIndex].classList.add('active');
+            
+            setInterval(() => {
+                slides[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % slides.length;
+                slides[currentIndex].classList.add('active');
+            }, interval);
+        }
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start carousels
+            initializeCarousel('.hero-carousel', heroImages, 5000);
+            initializeCarousel('.about-carousel', aboutImages, 5000);
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+            // Fade-in on scroll
+            const faders = document.querySelectorAll('.fade-in');
+            const observerOptions = {
+                threshold: 0.2
+            };
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+            faders.forEach(fader => observer.observe(fader));
         });
     </script>
 </body>
