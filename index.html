@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="media/AT_Productions_Transparant.png" type="image/png" sizes="128x128">
     <link rel="apple-touch-icon" href="media/AT_Productions_Transparant.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aroarah Thunder - Pageant Royalty</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-pM3r0b5c8sL2f5+fy6Zvvb3iLDc9kAR6L8zp1EK5eM+L9R5hbUYxJFHly5x5R5Lc5/sJz8N9Q8g4CkGJdQgQig=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             color: #2c2c2c;
             overflow-x: hidden;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Navigation */
         nav {
             position: fixed;
@@ -37,27 +43,27 @@
             z-index: 1000;
             padding: 1.5rem 0;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
+
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-        
-        .logo-image {   
+
+        .logo-image {
             width: 50px;
             height: 50px;
             background: url('media/AT_Productions_Transparant.ico') center/contain no-repeat;
         }
-        
+
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -65,13 +71,13 @@
             color: #1a1a1a;
             letter-spacing: 1px;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
             gap: 3rem;
         }
-        
+
         .nav-links a {
             color: #2c2c2c;
             text-decoration: none;
@@ -82,7 +88,7 @@
             text-transform: uppercase;
             font-size: 0.9rem;
         }
-        
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -93,11 +99,11 @@
             background: linear-gradient(90deg, #8B1538, #B91C47);
             transition: width 0.3s ease;
         }
-        
+
         .nav-links a:hover::after {
             width: 100%;
         }
-        
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -109,7 +115,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -119,7 +125,7 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="elegantPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23elegantPattern)"/></svg>');
         }
-        
+
         /* Image carousel background */
         .hero-carousel {
             position: absolute;
@@ -129,7 +135,7 @@
             height: 100%;
             z-index: 1;
         }
-        
+
         .hero-slide {
             position: absolute;
             top: 0;
@@ -142,11 +148,11 @@
             opacity: 0;
             transition: opacity 2s ease-in-out;
         }
-        
+
         .hero-slide.active {
             opacity: 0.3;
         }
-        
+
         .hero-slide::after {
             content: '';
             position: absolute;
@@ -156,23 +162,23 @@
             bottom: 0;
             background: linear-gradient(135deg, rgba(44, 10, 20, 0.8) 0%, rgba(139, 21, 56, 0.6) 50%, rgba(44, 10, 20, 0.8) 100%);
         }
-        
+
         .hero-content {
             z-index: 3;
             color: white;
             max-width: 800px;
             position: relative;
         }
-        
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4.5rem;
             margin-bottom: 1rem;
             font-weight: 400;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
         }
-        
+
         .hero-subtitle {
             font-size: 1.2rem;
             margin-bottom: 2rem;
@@ -181,7 +187,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        
+
         .hero-tagline {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -189,7 +195,7 @@
             font-style: italic;
             opacity: 0.9;
         }
-        
+
         .cta-button {
             display: inline-block;
             padding: 18px 40px;
@@ -204,19 +210,19 @@
             font-size: 0.9rem;
             box-shadow: 0 8px 25px rgba(139, 21, 56, 0.4);
         }
-        
+
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 35px rgba(139, 21, 56, 0.6);
             background: linear-gradient(135deg, #B91C47, #8B1538);
         }
-        
+
         /* Services Section */
         .services {
             padding: 120px 0;
             background: #fafafa;
         }
-        
+
         .section-title {
             text-align: center;
             font-family: 'Playfair Display', serif;
@@ -226,7 +232,7 @@
             font-weight: 400;
             position: relative;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -237,62 +243,62 @@
             height: 3px;
             background: linear-gradient(90deg, #8B1538, #B91C47);
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 3rem;
             margin-top: 5rem;
         }
-        
+
         .service-card {
             background: white;
             padding: 3rem 2rem;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             transition: all 0.4s ease;
             position: relative;
             border-top: 3px solid transparent;
         }
-        
+
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
             border-top: 3px solid #8B1538;
         }
-        
+
         .service-icon {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             color: #8B1538;
         }
-        
+
         .service-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             color: #1a1a1a;
         }
-        
+
         .service-card p {
             color: #666;
             line-height: 1.7;
             font-weight: 300;
         }
-        
+
         /* About Section */
         .about {
             padding: 120px 0;
             background: white;
         }
-        
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
             align-items: center;
         }
-        
+
         .about-text h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
@@ -300,7 +306,7 @@
             color: #1a1a1a;
             font-weight: 400;
         }
-        
+
         .about-text p {
             font-size: 1.1rem;
             margin-bottom: 1.8rem;
@@ -308,21 +314,21 @@
             line-height: 1.8;
             font-weight: 300;
         }
-        
+
         .achievements {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin-top: 2rem;
         }
-        
+
         .achievement {
             text-align: center;
             padding: 1.5rem;
             background: #fafafa;
             border-left: 3px solid #8B1538;
         }
-        
+
         .achievement-number {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -330,14 +336,14 @@
             color: #8B1538;
             display: block;
         }
-        
+
         .achievement-text {
             font-size: 0.9rem;
             color: #666;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .about-image {
             position: relative;
             height: 500px;
@@ -347,10 +353,10 @@
             justify-content: center;
             color: #B91C47;
             font-size: 4rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             overflow: hidden;
         }
-        
+
         .about-carousel {
             position: absolute;
             top: 0;
@@ -358,7 +364,7 @@
             width: 100%;
             height: 100%;
         }
-        
+
         .about-slide {
             position: absolute;
             top: 0;
@@ -370,57 +376,57 @@
             opacity: 0;
             transition: opacity 2s ease-in-out;
         }
-        
+
         .about-slide.active {
             opacity: 0.8;
         }
-        
+
         /* Pageants Section */
         .pageants {
             padding: 120px 0;
             background: #2C0A14;
             color: white;
         }
-        
+
         .pageants .section-title {
             color: white;
         }
-        
+
         .pageants-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
-        
+
         .pageant-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 2.5rem 2rem;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
-        
+
         .pageant-card:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             transform: translateY(-5px);
             border-color: #8B1538;
         }
-        
+
         .pageant-year {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             color: #B91C47;
             margin-bottom: 1rem;
         }
-        
+
         .pageant-title {
             font-size: 1.3rem;
             margin-bottom: 1rem;
             font-weight: 500;
         }
-        
+
         .pageant-result {
             color: #B91C47;
             font-weight: 600;
@@ -428,29 +434,29 @@
             letter-spacing: 1px;
             font-size: 0.9rem;
         }
-        
+
         /* Testimonials Section */
         .testimonials {
             padding: 120px 0;
             background: #fafafa;
             text-align: center;
         }
-        
+
         .testimonial-card {
             max-width: 900px;
             margin: 0 auto;
             background: white;
             padding: 4rem 3rem;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
             position: relative;
         }
-        
+
         .quote-icon {
             font-size: 3rem;
             color: #8B1538;
             margin-bottom: 2rem;
         }
-        
+
         .testimonial-text {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
@@ -459,7 +465,7 @@
             color: #333;
             line-height: 1.6;
         }
-        
+
         .testimonial-author {
             font-weight: 600;
             color: #1a1a1a;
@@ -467,13 +473,13 @@
             letter-spacing: 1px;
             font-size: 0.9rem;
         }
-        
+
         .testimonial-title {
             color: #666;
             font-size: 0.9rem;
             margin-top: 0.5rem;
         }
-        
+
         /* Contact Section */
         .contact {
             padding: 120px 0;
@@ -481,28 +487,28 @@
             color: white;
             text-align: center;
         }
-        
+
         .contact h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             margin-bottom: 2rem;
             font-weight: 400;
         }
-        
+
         .contact p {
             font-size: 1.2rem;
             margin-bottom: 3rem;
             opacity: 0.9;
             font-weight: 300;
         }
-        
+
         .contact-buttons {
             display: flex;
             gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .contact-button {
             padding: 18px 35px;
             background: transparent;
@@ -515,96 +521,152 @@
             letter-spacing: 1px;
             font-size: 0.9rem;
         }
-        
+
         .contact-button:hover {
             background: #B91C47;
             color: white;
             transform: translateY(-2px);
         }
-        
+
         .contact-button.primary {
             background: linear-gradient(135deg, #8B1538, #B91C47);
             color: white;
             border: none;
         }
-        
+
         .contact-button.primary:hover {
             background: linear-gradient(135deg, #B91C47, #8B1538);
         }
-        
+
         /* Footer */
         footer {
             background: #0a0a0a;
             color: white;
             text-align: center;
             padding: 3rem 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         footer p {
             opacity: 0.7;
             font-weight: 300;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 3rem;
             }
-            
+
             .hero-tagline {
                 font-size: 1.2rem;
             }
-            
+
             .section-title {
                 font-size: 2.5rem;
             }
-            
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            
+
             .nav-links {
                 display: none;
             }
-            
+
             .contact-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .achievements {
                 grid-template-columns: 1fr;
             }
-            
+
             .logo {
                 gap: 0.5rem;
             }
-            
+
             .logo-image {
                 width: 40px;
                 height: 40px;
             }
-            
+
             .logo-text {
                 font-size: 1.5rem;
             }
         }
-        
+
         /* Scroll animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-        
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Social icons */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .socials a {
+            font-size: 1.4rem;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #B91C47;
+        }
+
+        /* Donation section */
+        .donate-section {
+            background: #8B1538;
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .donate-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .donate-section p {
+            color: #f0eaea;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #fafafa;
+            color: #8B1538;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .donate-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -651,22 +713,26 @@
                 <div class="service-card fade-in">
                     <div class="service-icon">👑</div>
                     <h3>Pageant Coaching</h3>
-                    <p>Professional guidance in presentation, stage presence, interview skills, and competition preparation from a seasoned pageant competitor.</p>
+                    <p>Professional guidance in presentation, stage presence, interview skills, and competition
+                        preparation from a seasoned pageant competitor.</p>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon">🎭</div>
                     <h3>Corporate Entertainment</h3>
-                    <p>Sophisticated performance entertainment for corporate events, galas, and upscale private functions with tailored content and professional delivery.</p>
+                    <p>Sophisticated performance entertainment for corporate events, galas, and upscale private
+                        functions with tailored content and professional delivery.</p>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon">🌟</div>
                     <h3>Pageant Judging</h3>
-                    <p>Expert judging services for drag pageants and competitions, bringing years of experience and industry knowledge to your event.</p>
+                    <p>Expert judging services for drag pageants and competitions, bringing years of experience and
+                        industry knowledge to your event.</p>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon">🎪</div>
                     <h3>Special Events</h3>
-                    <p>Curated performances for charity galas, fundraisers, and milestone celebrations with elegant artistry and professional presentation.</p>
+                    <p>Curated performances for charity galas, fundraisers, and milestone celebrations with elegant
+                        artistry and professional presentation.</p>
                 </div>
             </div>
         </div>
@@ -678,8 +744,12 @@
             <div class="about-content">
                 <div class="about-text fade-in">
                     <h2>Artistry Meets Excellence</h2>
-                    <p>Aroarah Thunder represents the pinnacle of drag artistry, combining classical elegance with contemporary performance excellence. With a distinguished career spanning multiple pageant victories and countless memorable performances.</p>
-                    <p>Every appearance is meticulously crafted, from custom couture gowns to carefully choreographed numbers that showcase both technical skill and emotional depth. This commitment to excellence has earned recognition throughout the pageant circuit.</p>
+                    <p>Aroarah Thunder represents the pinnacle of drag artistry, combining classical elegance with
+                        contemporary performance excellence. With a distinguished career spanning multiple pageant
+                        victories and countless memorable performances.</p>
+                    <p>Every appearance is meticulously crafted, from custom couture gowns to carefully choreographed
+                        numbers that showcase both technical skill and emotional depth. This commitment to excellence
+                        has earned recognition throughout the pageant circuit.</p>
                     <div class="achievements">
                         <div class="achievement">
                             <span class="achievement-number">15+</span>
@@ -757,7 +827,9 @@
             <h2 class="section-title">Client Testimonials</h2>
             <div class="testimonial-card fade-in">
                 <div class="quote-icon">"</div>
-                <p class="testimonial-text">Aroarah Thunder brought an unparalleled level of sophistication and professionalism to our annual charity gala. Her performance was both captivating and appropriate for our distinguished audience. The feedback from our board members was overwhelmingly positive.</p>
+                <p class="testimonial-text">Aroarah Thunder brought an unparalleled level of sophistication and
+                    professionalism to our annual charity gala. Her performance was both captivating and appropriate for
+                    our distinguished audience. The feedback from our board members was overwhelmingly positive.</p>
                 <p class="testimonial-author">Victoria Sterling</p>
                 <p class="testimonial-title">Event Director, Metropolitan Arts Foundation</p>
             </div>
@@ -780,9 +852,29 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+            <!-- Social links -->
+            <div class="socials">
+                <a href="https://www.facebook.com/aroarah.thunder" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- add more as needed -->
+            </div>
+
+            <!-- Donation call-out -->
+            <div class="donate-section">
+                <h3>Support Aroarah Thunder</h3>
+                <p>Your generosity helps keep the art alive!</p>
+                <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" class="donate-button"
+                    target="_blank">Donate Now</a>
+            </div>
+
             <p>&copy; 2025 Aroarah Thunder. Professional Entertainment Services. All rights reserved.</p>
         </div>
     </footer>
+
 
     <script>
         // Image rotation arrays
@@ -793,7 +885,7 @@
             'media/AT_Gala_Event.jpg',
             'media/AT_Stage_Performance.jpg'
         ];
-        
+
         const aboutImages = [
             'media/AT_Orange_Dress_03.jpg',
             'media/AT_Poster_01.jpg',
@@ -805,14 +897,14 @@
         function initializeCarousel(containerSelector, images, interval = 4000) {
             const container = document.querySelector(containerSelector);
             if (!container) return;
-            
+
             const slides = container.querySelectorAll('.hero-slide, .about-slide');
             let currentIndex = 0;
-            
+
             // Set first slide as active
             if (slides.length === 0) return;
             slides[currentIndex].classList.add('active');
-            
+
             setInterval(() => {
                 slides[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % slides.length;
@@ -843,4 +935,5 @@
         });
     </script>
 </body>
+
 </html>
